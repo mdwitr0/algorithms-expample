@@ -1,11 +1,34 @@
 package search
 
-// Linear имеет время выполнения O(n)
+import "fmt"
+
+// Linear имеет линейное O(n) время выполнения
 func Linear(list []int, x int) (res int, ok bool) {
 	for index, item := range list {
+		fmt.Println("linear iter")
 		if item == x {
 			return index, true
 		}
 	}
-	return 0, false
+	return -1, false
+}
+
+// Binary имеет логарифмическое O(log n) время выполнения
+func Binary(list []int, x int) (res int, ok bool) {
+	first := 0
+	last := len(list) - 1
+
+	for first <= last {
+		fmt.Println("binary iter")
+		mid := (first + last) / 2
+		if list[mid] == x {
+			return mid, true
+		}
+		if list[mid] < x {
+			first = mid + 1
+		} else {
+			last = mid - 1
+		}
+	}
+	return -1, false
 }

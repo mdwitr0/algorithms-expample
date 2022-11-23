@@ -1,11 +1,8 @@
 package search
 
-import "fmt"
-
 // Linear имеет линейное O(n) время выполнения
 func Linear(list []int, x int) (res int, ok bool) {
 	for index, item := range list {
-		fmt.Println("linear iter")
 		if item == x {
 			return index, true
 		}
@@ -19,7 +16,6 @@ func Binary(list []int, x int) (res int, ok bool) {
 	last := len(list) - 1
 
 	for first <= last {
-		fmt.Println("binary iter")
 		mid := (first + last) / 2
 		if list[mid] == x {
 			return mid, true

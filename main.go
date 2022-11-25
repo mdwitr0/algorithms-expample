@@ -1,6 +1,7 @@
 package main
 
 import (
+	"algorithms/math"
 	"algorithms/search"
 	"algorithms/sort"
 	"fmt"
@@ -28,5 +29,11 @@ func main() {
 		list := sort.SelectionSearch(numbers)
 
 		fmt.Println("Selection search result:", list)
+	}()
+
+	func() {
+		res := math.Sum(numbers)
+
+		fmt.Println("Sum result:", res)
 	}()
 }

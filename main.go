@@ -26,9 +26,9 @@ func main() {
 	}()
 
 	func() {
-		list := sort.SelectionSearch(numbers)
+		list := sort.SelectionSort(numbers)
 
-		fmt.Println("Selection search result:", list)
+		fmt.Println("Selection sort result:", list)
 	}()
 
 	func() {

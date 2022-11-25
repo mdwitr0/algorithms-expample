@@ -14,7 +14,7 @@ func findSmallest(list []int) int {
 	return smallestIndex
 }
 
-func SelectionSearch(list []int) []int {
+func SelectionSort(list []int) []int {
 	size := len(list)
 	sortedList := make([]int, size)
 

@@ -27,3 +27,27 @@ func SelectionSort(list []int) []int {
 
 	return sortedList
 }
+
+func Quick(list []int) []int {
+	if len(list) < 2 {
+		return list
+	}
+
+	pivot := list[len(list)/2]
+
+	var less []int
+	var greater []int
+
+	for _, item := range list {
+		if item < pivot {
+			less = append(less, item)
+		} else {
+			greater = append(greater, item)
+		}
+	}
+
+	less = append(Quick(less), pivot)
+	greater = append(greater)
+
+	return append(less, greater...)
+}

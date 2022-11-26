@@ -32,6 +32,12 @@ func main() {
 	}()
 
 	func() {
+		list := sort.Quick(numbers)
+
+		fmt.Println("Quick sort result:", list)
+	}()
+
+	func() {
 		res := math.Sum(numbers)
 
 		fmt.Println("Sum result:", res)

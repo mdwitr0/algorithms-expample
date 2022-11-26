@@ -36,4 +36,10 @@ func main() {
 
 		fmt.Println("Sum result:", res)
 	}()
+
+	func() {
+		res := math.Fact(5)
+
+		fmt.Println("Fact result:", res)
+	}()
 }

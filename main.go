@@ -26,7 +26,9 @@ func main() {
 	}()
 
 	func() {
-		list := sort.SelectionSort(numbers)
+		numbers := []int{11, 22, 3, 4, 5, 6, 7, 8, 9, 10}
+
+		list := sort.Selection(numbers)
 
 		fmt.Println("Selection sort result:", list)
 	}()

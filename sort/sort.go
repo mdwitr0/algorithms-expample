@@ -14,11 +14,11 @@ func findSmallest(list []int) int {
 	return smallestIndex
 }
 
-func SelectionSort(list []int) []int {
+func Selection(list []int) []int {
 	size := len(list)
 	sortedList := make([]int, size)
 
-	for i := 0; i < size; i++ {
+	for i := range list {
 		position := findSmallest(list)
 		sortedList[i] = list[position]
 

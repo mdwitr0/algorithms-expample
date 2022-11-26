@@ -31,23 +31,27 @@ func Selection(list []int) []int {
 func Quick(list []int) []int {
 	if len(list) < 2 {
 		return list
-	}
+	} else {
+		pivotIndex := len(list) / 2
+		pivot := list[pivotIndex]
 
-	pivot := list[len(list)/2]
+		list = append(list[:pivotIndex], list[pivotIndex+1:]...)
 
-	var less []int
-	var greater []int
+		var less []int
+		var greater []int
 
-	for _, item := range list {
-		if item < pivot {
-			less = append(less, item)
-		} else {
-			greater = append(greater, item)
+		for _, item := range list {
+			if item < pivot {
+				less = append(less, item)
+			} else {
+				greater = append(greater, item)
+			}
 		}
+
+		less = append(Quick(less), pivot)
+		greater = Quick(greater)
+
+		return append(less, greater...)
 	}
 
-	less = append(Quick(less), pivot)
-	greater = append(greater)
-
-	return append(less, greater...)
 }

@@ -26,6 +26,23 @@ func main() {
 	}()
 
 	func() {
+		var graph = map[string][]string{
+			"you":    []string{"alice", "bob", "claire"},
+			"bob":    []string{"anuj", "peggy"},
+			"alice":  []string{"peggy"},
+			"claire": []string{"thom", "jonny"},
+			"anuj":   []string{},
+			"peggy":  []string{},
+			"thom":   []string{},
+			"jonny":  []string{},
+		}
+
+		res := search.BFS(graph, "you", "thom")
+
+		fmt.Println("BFS result:", res)
+	}()
+
+	func() {
 		numbers := []int{11, 22, 3, 4, 5, 6, 7, 8, 9, 10}
 
 		list := sort.Selection(numbers)

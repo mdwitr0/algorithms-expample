@@ -1,7 +1,7 @@
 package search
 
 // Linear имеет линейное O(n) время выполнения
-func Linear(list []int, x int) (res int, ok bool) {
+func Linear[T comparable](list []T, x T) (res int, ok bool) {
 	for index, item := range list {
 		if item == x {
 			return index, true
